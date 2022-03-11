@@ -8,7 +8,7 @@ function App() {
   return (
     <div>
       <Navbar />
-      <h1>Hakaton</h1>
+      <h1>Haсkathon</h1>
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/card" component={Card} />
