@@ -14,7 +14,7 @@ const NavBar = () => {
                 <Link to="/favourites">Избранные</Link>
             </li>
         </ul>
-    )
-}
+    );
+};
 
-export default NavBar
+export default NavBar;
