@@ -63,7 +63,7 @@ export default function Home({ users }) {
     console.log(users);
 
     return (
-        <div class="wrapper">
+        <div className="wrapper">
             {/* Meet the team section */}
 
             <div className="py-12 bg-white">

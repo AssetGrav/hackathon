@@ -16,7 +16,11 @@ export const data = [
         ],
         about: "Fugiat ipsum ipsum deserunt culpa aute sint do nostrud anim incididunt cillum culpa consequat. Excepteur qui ipsum aliquip consequat sint. Sit id mollit nulla mollit nostrud in ea officia proident. Irure nostrud pariatur mollit ad adipisicing reprehenderit deserunt qui eu.",
         responsobilities: "",
-        progress: [],
+        progress: [
+            { name: "JavaScript", value: 80 },
+            { name: "React", value: 50 },
+            { name: "NodeJS", value: 10 }
+        ],
         badge: true
     },
     {
@@ -36,7 +40,11 @@ export const data = [
         ],
         about: "Fugiat ipsum ipsum deserunt culpa aute sint do nostrud anim incididunt cillum culpa consequat. Excepteur qui ipsum aliquip consequat sint. Sit id mollit nulla mollit nostrud in ea officia proident. Irure nostrud pariatur mollit ad adipisicing reprehenderit deserunt qui eu.",
         responsobilities: "",
-        progress: [],
+        progress: [
+            { name: "JavaScript", value: 80 },
+            { name: "React", value: 50 },
+            { name: "NodeJS", value: 10 }
+        ],
         badge: false
     },
     {
@@ -56,7 +64,11 @@ export const data = [
         ],
         about: "Fugiat ipsum ipsum deserunt culpa aute sint do nostrud anim incididunt cillum culpa consequat. Excepteur qui ipsum aliquip consequat sint. Sit id mollit nulla mollit nostrud in ea officia proident. Irure nostrud pariatur mollit ad adipisicing reprehenderit deserunt qui eu.",
         responsobilities: "",
-        progress: [],
+        progress: [
+            { name: "JavaScript", value: 80 },
+            { name: "React", value: 50 },
+            { name: "NodeJS", value: 10 }
+        ],
         badge: false
     }
 ];

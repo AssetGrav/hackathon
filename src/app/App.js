@@ -4,7 +4,7 @@ import Favourites from "./components/page/favourites";
 import Home from "./components/page/home";
 import NavBar from "./components/common/navbar";
 import { data } from "./api/fake_api";
-import userProfile from "./components/page/userProfile";
+import UserProfile from "./components/page/userProfile";
 
 function App() {
     const [users] = useState(data);
@@ -20,7 +20,7 @@ function App() {
                     render={(props) => <Home users={users} />}
                 />
                 <Route path="/favourites" render={(props) => <Favourites />} />
-                <Route path="/:id" render={(props) => <userProfile />} />
+                <Route path="/:id" render={(props) => <UserProfile />} />
             </Switch>
         </div>
     );
