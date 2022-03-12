@@ -1,21 +1,29 @@
+import React, { useState } from "react";
 import { Route, Switch } from "react-router-dom";
-import Card from "./components/card";
-import Favourites from "./components/favourites";
-import Home from "./components/home";
-import Navbar from "./components/navbar";
+import Favourites from "./components/page/favourites";
+import Home from "./components/page/home";
+import NavBar from "./components/common/navbar";
+import { data } from "./api/fake_api";
+import userProfile from "./components/page/userProfile";
 
 function App() {
-  return (
-    <div>
-      <Navbar />
-      <h1>Haсkathon</h1>
-      <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/card" component={Card} />
-        <Route path="/favourites" component={Favourites}/>
-      </Switch>
-    </div>
-  );
+    const [users] = useState(data);
+
+    return (
+        <div className="App">
+            <NavBar users={users} />
+            {/* <h1>Haсkathon</h1> */}
+            <Switch>
+                <Route
+                    path="/"
+                    exact
+                    render={(props) => <Home users={users} />}
+                />
+                <Route path="/favourites" render={(props) => <Favourites />} />
+                <Route path="/:id" render={(props) => <userProfile />} />
+            </Switch>
+        </div>
+    );
 }
 
 export default App;
