@@ -1,6 +1,6 @@
 export const data = [
     {
-        _id: "777",
+        _id: "8p103t16",
         name: "Roman Kharitonov",
         age: 28,
         picUrl: "https://picsum.photos/200/200",
@@ -15,27 +15,40 @@ export const data = [
             }
         ],
         about: "Fugiat ipsum ipsum deserunt culpa aute sint do nostrud anim incididunt cillum culpa consequat. Excepteur qui ipsum aliquip consequat sint. Sit id mollit nulla mollit nostrud in ea officia proident. Irure nostrud pariatur mollit ad adipisicing reprehenderit deserunt qui eu.",
-        responsobilities: "",
+        responsobilities: [
+            "Fugiat ipsum ipsum",
+            "Fugiat ipsum ipsum",
+            "Fugiat ipsum ipsum",
+            "Fugiat ipsum ipsum"
+        ],
         progress: [],
         badge: true
     },
     {
         _id: "8103169f",
         name: "Roman Bura",
-        age: 31,
-        picUrl: "https://picsum.photos/200/200",
+        age: 28,
+        picUrl: "https://r2b.dev/images/r2b-crop.jpeg",
         social: [
             {
                 label: "Instagram",
-                id: "fsdf12"
+                id: "r2bdev"
             },
             {
-                label: "Facebook",
-                id: ""
+                label: "LinkedIn",
+                id: "roma2bura"
             }
         ],
-        about: "Fugiat ipsum ipsum deserunt culpa aute sint do nostrud anim incididunt cillum culpa consequat. Excepteur qui ipsum aliquip consequat sint. Sit id mollit nulla mollit nostrud in ea officia proident. Irure nostrud pariatur mollit ad adipisicing reprehenderit deserunt qui eu.",
-        responsobilities: "",
+        about: "Creative approaches to front- end web development and deep analytical skills proven by a track record of positive feedback from clients and users.",
+        responsobilities: [
+            "API config",
+            "Configure Tailwind UI",
+            "Project restructuring",
+            "Mockups",
+            "Nav component",
+            "HomePage component",
+            "UserPage component"
+        ],
         progress: [],
         badge: false
     },
@@ -55,7 +68,12 @@ export const data = [
             }
         ],
         about: "Fugiat ipsum ipsum deserunt culpa aute sint do nostrud anim incididunt cillum culpa consequat. Excepteur qui ipsum aliquip consequat sint. Sit id mollit nulla mollit nostrud in ea officia proident. Irure nostrud pariatur mollit ad adipisicing reprehenderit deserunt qui eu.",
-        responsobilities: "",
+        responsobilities: [
+            "Fugiat ipsum ipsum",
+            "Fugiat ipsum ipsum",
+            "Fugiat ipsum ipsum",
+            "Fugiat ipsum ipsum"
+        ],
         progress: [],
         badge: false
     }
