@@ -20,10 +20,14 @@ function App() {
                     render={(props) => <Home users={users} />}
                 />
                 <Route path="/favourites" render={(props) => <Favourites />} />
-                <Route path="/:id" render={(props) => <UserProfile />} />
+                <Route
+                    path="/:id"
+                    render={(props) => <UserProfile users={users} {...props} />}
+                />
             </Switch>
         </div>
     );
 }
 
 export default App;
+
