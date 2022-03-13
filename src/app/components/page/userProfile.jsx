@@ -1,5 +1,5 @@
-import { StarIcon } from "@heroicons/react/solid";
 import { BookmarkAltIcon } from "@heroicons/react/outline";
+import ProgressBar from "../common/progressBar";
 
 const badgeSrc = "https://miro.medium.com/max/400/1*5AJzL3uXsKGU-R-LyTJNeA.png";
 
@@ -95,26 +95,13 @@ export default function UserProfile({ match, users }) {
                                     <h3 className="text-sm text-gray-900 font-medium mb-2">
                                         Skills
                                     </h3>
-                                    <div className="flex items-center">
-                                        <div className="flex items-center">
-                                            {[0, 1, 2, 3, 4].map((rating) => (
-                                                <StarIcon
-                                                    key={rating}
-                                                    className={classNames(
-                                                        reviews.average > rating
-                                                            ? "text-gray-900"
-                                                            : "text-gray-200",
-                                                        "h-5 w-5 flex-shrink-0"
-                                                    )}
-                                                    aria-hidden="true"
-                                                />
-                                            ))}
-                                        </div>
-
-                                        <a className="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500">
-                                            REACT.js
-                                        </a>
-                                    </div>
+                                    {userData.progress.map((course) => (
+                                        <ProgressBar
+                                            key={course.name}
+                                            label={course.name}
+                                            progressValue={course.value}
+                                        />
+                                    ))}
                                 </div>
 
                                 <form className="mt-10">
