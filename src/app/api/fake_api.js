@@ -78,3 +78,18 @@ export const data = [
         badge: false
     }
 ];
+
+const images = [
+    {
+        _id: 1,
+        img: "https://tailwindui.com/img/ecommerce-images/home-page-02-edition-01.jpg",
+        text: "Desk and Office",
+    },
+    {
+        _id: 2,
+        img: "https://images.unsplash.com/photo-1589987598188-fd7e9105efe8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+        text: "Working process"
+    }
+];
+export default images;
+
