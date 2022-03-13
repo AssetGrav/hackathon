@@ -5,6 +5,8 @@ import {
     LightningBoltIcon,
     ScaleIcon
 } from "@heroicons/react/outline";
+
+import Slider from "../common/slider";
 import UserCard from "../common/userCard";
 
 const features = [
@@ -35,7 +37,6 @@ const features = [
 ];
 
 export default function Home({ users }) {
-    console.log(users);
 
     return (
         <div className="wrapper">
@@ -63,7 +64,7 @@ export default function Home({ users }) {
                     </section>
                 </div>
             </div>
-
+            <Slider />
             <div className="pb-10 bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:pb-8">
                     <div className="lg:text-center">
