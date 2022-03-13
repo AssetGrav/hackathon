@@ -99,7 +99,7 @@ export const data = [
         _id: "c8a17af7",
         name: "Asset GA",
         position: "Web developer",
-        age: 30,
+        age: 40,
         picUrl: "https://neutrinoteam.pro/hackathon-01/539b23ef3acb5889f8fa72afe7648b55.jpg",
         socials: [
             {
@@ -120,19 +120,19 @@ export const data = [
             },
             {
                 label: "github",
-                id: ""
+                id: "AssetGrav"
             },
             {
                 label: "telegram",
                 id: "AssetGravitation"
             }
         ],
-        about: "Fugiat ipsum ipsum deserunt culpa aute sint do nostrud anim incididunt cillum culpa consequat. Excepteur qui ipsum aliquip consequat sint.",
+        about: "Web developer learn JS want to know JS ",
         responsobilities: ["Slider component"],
         progress: [
-            { name: "JavaScript", value: 100 },
-            { name: "React", value: 50 },
-            { name: "NodeJS", value: 1 }
+            { name: "JavaScript", value: 40 },
+            { name: "React", value: 20 },
+            { name: "NodeJS", value: 5 }
         ],
         badge: false
     }
