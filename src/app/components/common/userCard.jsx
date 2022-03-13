@@ -1,11 +1,24 @@
 import { React } from "react";
 import Socials from "./socials";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import PropTypes from "prop-types";
 
-const UserCard = ({ user }) => {
+const UserCard = ({ user, onDeleteFromFavorites }) => {
     return (
         <div className="flex flex-col items-center justify-center col-span-1">
             <div className="relative p-5">
-                <div className="absolute z-10 w-full h-full -mt-5 -ml-5 rounded-full rounded-tr-none bg-blue-50"></div>
+                <div className="absolute z-10 w-full h-full -mt-5 -ml-5 rounded-full rounded-tr-none bg-blue-50">
+                    <div className="absolute top-4 right-4">
+                        {onDeleteFromFavorites && (
+                            <FontAwesomeIcon
+                                icon={faXmark}
+                                className="text-4xl text-red-500 cursor-pointer"
+                                onClick={() => onDeleteFromFavorites(user._id)}
+                            />
+                        )}
+                    </div>
+                </div>
                 <a href={user._id}>
                     <img
                         className="relative z-20 w-full rounded-full"
@@ -27,6 +40,11 @@ const UserCard = ({ user }) => {
             </div>
         </div>
     );
+};
+
+UserCard.propTypes = {
+    user: PropTypes.object.isRequired,
+    onDeleteFromFavorites: PropTypes.func
 };
 
 export default UserCard;

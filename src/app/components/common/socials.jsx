@@ -8,6 +8,7 @@ import {
     faTelegram,
     faGithub
 } from "@fortawesome/free-brands-svg-icons";
+import PropTypes from "prop-types";
 
 const Socials = ({ socials }) => {
     const getIconInfo = (socialLabel) => {
@@ -78,6 +79,10 @@ const Socials = ({ socials }) => {
             })}
         </div>
     );
+};
+
+Socials.propTypes = {
+    socials: PropTypes.array.isRequired
 };
 
 export default Socials;

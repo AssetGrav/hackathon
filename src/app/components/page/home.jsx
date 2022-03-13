@@ -6,6 +6,7 @@ import {
     ScaleIcon
 } from "@heroicons/react/outline";
 import UserCard from "../common/userCard";
+import PropTypes from "prop-types";
 
 const features = [
     {
@@ -34,9 +35,7 @@ const features = [
     }
 ];
 
-export default function Home({ users }) {
-    console.log(users);
-
+const Home = ({ users }) => {
     return (
         <div className="wrapper">
             {/* Meet the team section */}
@@ -54,7 +53,7 @@ export default function Home({ users }) {
 
                     <section className="relative py-20 overflow-hidden bg-white">
                         <div className="relative px-16 mx-auto max-w-7xl">
-                            <div class="grid w-full grid-cols-3 gap-10 sm:grid-cols-2 lg:grid-cols-3">
+                            <div className="grid w-full grid-cols-3 gap-10 sm:grid-cols-2 lg:grid-cols-3">
                                 {users.map((user) => (
                                     <UserCard user={user} />
                                 ))}
@@ -137,4 +136,10 @@ export default function Home({ users }) {
             </div>
         </div>
     );
-}
+};
+
+Home.propTypes = {
+    users: PropTypes.array.isRequired
+};
+
+export default Home;
