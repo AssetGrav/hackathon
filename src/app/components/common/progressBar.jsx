@@ -27,13 +27,13 @@ const ProgressBar = ({ label, progressValue }) => {
     };
 
     return (
-        <div class="m-2 p-5 max-w-sm mx-auto bg-white rounded-xl shadow-lg flex items-center space-x-4">
+        <div className="m-2 p-5 max-w-sm mx-auto bg-white rounded-xl shadow-lg flex items-center space-x-4">
             <FontAwesomeIcon
                 icon={getIconInfo().icon}
                 className={`text-5xl ${getIconInfo().colorClassName}`}
             ></FontAwesomeIcon>
             <div className="w-full">
-                <div class="text-xl font-medium text-black">{label}</div>
+                <div className="text-xl font-medium text-black">{label}</div>
                 <div className="h-6 relative max-w-xl rounded-full overflow-hidden">
                     <div className="w-full h-full bg-gray-200 absolute"></div>
                     <div

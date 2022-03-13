@@ -66,24 +66,11 @@ const Socials = ({ socials }) => {
 								${getIconInfo(social.label).url}/${social.id}
 							`}
                         >
-                            <svg width="0" height="0">
-                                <linearGradient
-                                    id="blue-gradient"
-                                    x1="100%"
-                                    y1="100%"
-                                    x2="0%"
-                                    y2="0%"
-                                >
-                                    <stop stopColor="#7a6ded" offset="0%" />
-                                    <stop stopColor="#591885" offset="100%" />
-                                </linearGradient>
-                            </svg>
                             <FontAwesomeIcon
                                 icon={getIconInfo(social.label).icon}
                                 className={`text-4xl ${
                                     getIconInfo(social.label).colorClassName
-                                } backdrop-grayscale bg-white/30`}
-                                style={{ stroke: "url(#blue-gradient)" }}
+                                } bg-white/30`}
                             />
                         </a>
                     )
