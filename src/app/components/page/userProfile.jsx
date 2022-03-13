@@ -1,5 +1,5 @@
-import { StarIcon } from "@heroicons/react/solid";
 import { BookmarkAltIcon } from "@heroicons/react/outline";
+import ProgressBar from "../common/progressBar";
 
 const badgeSrc = "https://miro.medium.com/max/400/1*5AJzL3uXsKGU-R-LyTJNeA.png";
 
@@ -95,20 +95,13 @@ export default function UserProfile({ match, users }) {
                                     <h3 className="text-sm text-gray-900 font-medium mb-2">
                                         Skills
                                     </h3>
-                                    <div className="flex items-center">
+                                    {userData.progress.map((course) => (
                                         <ProgressBar
-                                            label="JavaScript"
-                                            progressValue="80"
+                                            key={course.name}
+                                            label={course.name}
+                                            progressValue={course.value}
                                         />
-                                        <ProgressBar
-                                            label="React"
-                                            progressValue="50"
-                                        />
-                                        <ProgressBar
-                                            label="NodeJS"
-                                            progressValue="10"
-                                        />
-                                    </div>
+                                    ))}
                                 </div>
 
                                 <form className="mt-10">

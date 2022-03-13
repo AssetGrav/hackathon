@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Route, Switch } from "react-router-dom";
-import Favourites from "./components/page/favourites";
+import Favorites from "./components/page/favorites";
 import Home from "./components/page/home";
 import NavBar from "./components/common/navbar";
 import { data } from "./api/fake_api";
@@ -19,7 +19,7 @@ function App() {
                     exact
                     render={(props) => <Home users={users} />}
                 />
-                <Route path="/favourites" render={(props) => <Favourites />} />
+                <Route path="/favorites" render={(props) => <Favorites />} />
                 <Route
                     path="/:id"
                     render={(props) => <UserProfile users={users} {...props} />}
@@ -30,4 +30,3 @@ function App() {
 }
 
 export default App;
-
