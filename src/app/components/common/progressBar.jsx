@@ -1,11 +1,11 @@
 import { React } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faJs, faReact, faNode } from "@fortawesome/free-brands-svg-icons";
+import PropTypes from "prop-types";
 
 const ProgressBar = ({ label, progressValue }) => {
     const getProgressColorClassName = () => {
         let progressBarColorClassName = "bg-red-500";
-        progressValue = parseInt(progressValue, 10);
         if (progressValue >= 80) {
             progressBarColorClassName = "bg-green-500";
         } else if (progressValue >= 50) {
@@ -48,6 +48,11 @@ const ProgressBar = ({ label, progressValue }) => {
             </div>
         </div>
     );
+};
+
+ProgressBar.propTypes = {
+    label: PropTypes.string,
+    progressValue: PropTypes.number
 };
 
 export default ProgressBar;

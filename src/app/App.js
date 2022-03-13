@@ -19,7 +19,10 @@ function App() {
                     exact
                     render={(props) => <Home users={users} />}
                 />
-                <Route path="/favorites" render={(props) => <Favorites />} />
+                <Route
+                    path="/favorites"
+                    render={(props) => <Favorites users={users} />}
+                />
                 <Route
                     path="/:id"
                     render={(props) => <UserProfile users={users} {...props} />}

@@ -1,26 +1,54 @@
+import React, { useState } from "react";
 import { BookmarkAltIcon } from "@heroicons/react/outline";
 import ProgressBar from "../common/progressBar";
+import PropTypes from "prop-types";
 
 const badgeSrc = "https://miro.medium.com/max/400/1*5AJzL3uXsKGU-R-LyTJNeA.png";
 
-const reviews = { href: "#", average: 4, totalCount: 117 };
-
-function classNames(...classes) {
-    return classes.filter(Boolean).join(" ");
-}
-
-export default function UserProfile({ match, users }) {
+const UserProfile = ({ match, users }) => {
     const userId = match.params.id;
-    console.log(userId);
 
-    console.log(users);
+    let favoriteUserIds = localStorage.getItem("favoriteUserIds");
+    favoriteUserIds = favoriteUserIds ? JSON.parse(favoriteUserIds) : [];
+
+    let [userIsFavoriteButtonSettings, setUserIsFavoriteButtonColor] = useState(
+        favoriteUserIds.includes(userId)
+            ? {
+                  color: "bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500",
+                  text: "Remove from Favorite"
+              }
+            : {
+                  color: "bg-gradient-to-r from-cyan-500 to-blue-500",
+                  text: "Add to Favorite"
+              }
+    );
 
     const getUserById = (id) => {
-        return users.find((usr) => usr._id === id);
+        return users.find((user) => user._id === id);
     };
 
     const userData = getUserById(userId);
-    console.log(userData);
+
+    const toggleUserIsFavorite = () => {
+        if (favoriteUserIds.includes(userId)) {
+            favoriteUserIds = favoriteUserIds.filter((id) => id !== userId);
+            setUserIsFavoriteButtonColor({
+                color: "bg-gradient-to-r from-cyan-500 to-blue-500",
+                text: "Add to Favorite"
+            });
+        } else {
+            favoriteUserIds.push(userId);
+            setUserIsFavoriteButtonColor({
+                color: "bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500",
+                text: "Remove from Favorite"
+            });
+        }
+
+        localStorage.setItem(
+            "favoriteUserIds",
+            JSON.stringify(favoriteUserIds)
+        );
+    };
 
     return (
         <div className="bg-white">
@@ -139,14 +167,15 @@ export default function UserProfile({ match, users }) {
                                     </div>
 
                                     <button
-                                        type="submit"
-                                        className="mt-10 w-full bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                                        type="button"
+                                        className={`mt-10 w-full border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white ${userIsFavoriteButtonSettings.color} focus:outline-none focus:ring-2 focus:ring-offset-2`}
+                                        onClick={toggleUserIsFavorite}
                                     >
                                         <BookmarkAltIcon
                                             className="flex-shrink-0 h-6 w-6 text-white-400 mr-2"
                                             aria-hidden="true"
                                         />
-                                        Add to Favorite
+                                        {userIsFavoriteButtonSettings.text}
                                     </button>
                                 </form>
                             </div>
@@ -199,4 +228,11 @@ export default function UserProfile({ match, users }) {
             </div>
         </div>
     );
-}
+};
+
+UserProfile.propTypes = {
+    match: PropTypes.object.isRequired,
+    users: PropTypes.array.isRequired
+};
+
+export default UserProfile;
