@@ -1,9 +1,11 @@
+import { React } from "react";
 import {
     AnnotationIcon,
     GlobeAltIcon,
     LightningBoltIcon,
     ScaleIcon
 } from "@heroicons/react/outline";
+import UserCard from "../common/userCard";
 
 const features = [
     {
@@ -36,66 +38,29 @@ export default function Home({ users }) {
     console.log(users);
 
     return (
-        <div class="wrapper">
+        <div className="wrapper">
             {/* Meet the team section */}
 
             <div className="py-12 bg-white">
                 <div className="bg-white">
                     <div className="lg:text-center">
-                        <h2 className="text-base text-indigo-600 font-semibold tracking-wide uppercase">
-                            Welcome
-                        </h2>
                         <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-                            Meet the Team
+                            Meet our amazing team
                         </p>
                         <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
-                            Lorem ipsum dolor sit amet consect adipisicing elit.
-                            Possimus magnam voluptatum cupiditate veritatis in
-                            accusamus quisquam.
+                            Group 16/19
                         </p>
                     </div>
 
-                    <div className="max-w-2xl mx-auto py-1 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-4">
-                        <div className="mt-2 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
-                            {users.map((user) => (
-                                <div key={user._id} className="group relative">
-                                    <div className="aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-30 lg:aspect-none">
-                                        <img
-                                            src={user.picUrl}
-                                            alt={user.name}
-                                            className=" object-center object-cover lg:h-26 rounded-full flex "
-                                        />
-                                    </div>
-                                    <div className="mt-4 flex justify-between">
-                                        <div>
-                                            <h3 className="text-lg font-bold text-gray-700">
-                                                <a href={user._id}>
-                                                    <span
-                                                        aria-hidden="true"
-                                                        className="absolute inset-0"
-                                                    />
-                                                    {user.name}
-                                                </a>
-                                            </h3>
-                                            <p className="mt-1 text-sm text-gray-500">
-                                                {user.about}
-                                            </p>
-                                        </div>
-                                        {user.social
-                                            ? user.social.map((usr) => (
-                                                  <a
-                                                      href={""}
-                                                      className="text-sm font-medium text-gray-900"
-                                                  >
-                                                      {usr.label}
-                                                  </a>
-                                              ))
-                                            : ""}
-                                    </div>
-                                </div>
-                            ))}
+                    <section className="relative py-20 overflow-hidden bg-white">
+                        <div className="relative px-16 mx-auto max-w-7xl">
+                            <div class="grid w-full grid-cols-3 gap-10 sm:grid-cols-2 lg:grid-cols-3">
+                                {users.map((user) => (
+                                    <UserCard user={user} />
+                                ))}
+                            </div>
                         </div>
-                    </div>
+                    </section>
                 </div>
             </div>
 
