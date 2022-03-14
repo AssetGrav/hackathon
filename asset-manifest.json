@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/hackathon.git/static/css/main.ee5bceb4.css",
-    "main.js": "/hackathon.git/static/js/main.f9d9e0be.js",
-    "index.html": "/hackathon.git/index.html",
-    "main.ee5bceb4.css.map": "/hackathon.git/static/css/main.ee5bceb4.css.map",
-    "main.f9d9e0be.js.map": "/hackathon.git/static/js/main.f9d9e0be.js.map"
+    "main.css": "/hackathon/static/css/main.ee5bceb4.css",
+    "main.js": "/hackathon/static/js/main.f9d9e0be.js",
+    "index.html": "/hackathon/index.html",
+    "main.ee5bceb4.css.map": "/hackathon/static/css/main.ee5bceb4.css.map",
+    "main.f9d9e0be.js.map": "/hackathon/static/js/main.f9d9e0be.js.map"
   },
   "entrypoints": [
     "static/css/main.ee5bceb4.css",
