@@ -1,4 +1,4 @@
-import { React } from "react";
+import React from "react";
 import Socials from "./socials";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";

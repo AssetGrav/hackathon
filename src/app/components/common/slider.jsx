@@ -32,6 +32,7 @@ const Slider = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         checkData(data.img).then((resp) => {
+            console.log(resp);
             if (resp !== "Network Error") {
                 addImages(data).then((data) =>setImagesArr(data));
             }
@@ -87,7 +88,7 @@ const Slider = () => {
                         </svg>
                     </button>
                 </div>
-                <p>Добавьте свою картинку, сайт и Ваше имя</p>
+                <p className="lg:text-center">Добавьте свою картинку, сайт и ваше имя</p>
                 <Form onChange={handleChange} data={data} onClick={handleSubmit} />
                 <ToastContainer />
             </div>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 
-const TextField = ({ onChange, value, type, name, placeholder, error}) => {
+const TextField = ({ onChange, value, type, name, placeholder }) => {
     const [inputFile, setInputFile] = useState();
    
     const handleChange = ({ target }) => {
@@ -24,6 +25,13 @@ const TextField = ({ onChange, value, type, name, placeholder, error}) => {
             />
         </div>
     );
+};
+TextField.propTypes = {
+    onChange: PropTypes.func,
+    value: PropTypes.string,
+    type: PropTypes.string,
+    name: PropTypes.string,
+    placeholder: PropTypes.string
 };
 
 export default TextField;

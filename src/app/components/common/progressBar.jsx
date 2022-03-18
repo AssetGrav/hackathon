@@ -1,4 +1,4 @@
-import { React } from "react";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faJs, faReact, faNode } from "@fortawesome/free-brands-svg-icons";
 import PropTypes from "prop-types";
