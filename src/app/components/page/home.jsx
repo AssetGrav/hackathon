@@ -84,6 +84,7 @@ export default function Home({ users }) {
                                         {user.social
                                             ? user.social.map((usr) => (
                                                   <a
+                                                      key={usr._id}
                                                       href={""}
                                                       className="text-sm font-medium text-gray-900"
                                                   >
