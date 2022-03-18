@@ -1,10 +1,14 @@
+import { React } from "react";
 import {
     AnnotationIcon,
     GlobeAltIcon,
     LightningBoltIcon,
     ScaleIcon
 } from "@heroicons/react/outline";
+
 import Slider from "../common/slider";
+import UserCard from "../common/userCard";
+import PropTypes from "prop-types";
 
 const features = [
     {
@@ -33,8 +37,7 @@ const features = [
     }
 ];
 
-export default function Home({ users }) {
-
+const Home = ({ users }) => {
     return (
         <div className="wrapper">
             {/* Meet the team section */}
@@ -42,18 +45,14 @@ export default function Home({ users }) {
             <div className="py-12 bg-white">
                 <div className="bg-white">
                     <div className="lg:text-center">
-                        <h2 className="text-base text-indigo-600 font-semibold tracking-wide uppercase">
-                            Welcome
-                        </h2>
                         <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-                            Meet the Team
+                            Meet our amazing team
                         </p>
                         <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
-                            Lorem ipsum dolor sit amet consect adipisicing elit.
-                            Possimus magnam voluptatum cupiditate veritatis in
-                            accusamus quisquam.
+                            Group 16/19
                         </p>
                     </div>
+
 
                     <div className="max-w-2xl mx-auto py-1 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-4">
                         <div className="mt-2 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
@@ -84,7 +83,6 @@ export default function Home({ users }) {
                                         {user.social
                                             ? user.social.map((usr) => (
                                                   <a
-                                                      key={usr._id}
                                                       href={""}
                                                       className="text-sm font-medium text-gray-900"
                                                   >
@@ -95,8 +93,16 @@ export default function Home({ users }) {
                                     </div>
                                 </div>
                             ))}
+=======
+                    <section className="relative py-20 overflow-hidden bg-white">
+                        <div className="relative px-16 mx-auto max-w-7xl">
+                            <div className="grid w-full grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
+                                {users.map((user) => (
+                                    <UserCard user={user} key={user._id} />
+                                ))}
+                            </div>
                         </div>
-                    </div>
+                    </section>
                 </div>
             </div>
             <Slider />
@@ -173,4 +179,10 @@ export default function Home({ users }) {
             </div>
         </div>
     );
-}
+};
+
+Home.propTypes = {
+    users: PropTypes.array.isRequired
+};
+
+export default Home;

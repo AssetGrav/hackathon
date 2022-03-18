@@ -9,12 +9,13 @@ import {
 } from "@heroicons/react/outline";
 import { ChevronDownIcon } from "@heroicons/react/solid";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(" ");
 }
 
-export default function NavBar({ users }) {
+const NavBar = ({ users }) => {
     return (
         <div className="wrapper">
             <Popover className="relative bg-white">
@@ -135,7 +136,7 @@ export default function NavBar({ users }) {
                             </a>
 
                             <Link
-                                to="/favourites"
+                                to="/favorites"
                                 className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
                             >
                                 <BookmarkAltIcon
@@ -215,4 +216,10 @@ export default function NavBar({ users }) {
             </Popover>
         </div>
     );
-}
+};
+
+NavBar.propTypes = {
+    users: PropTypes.array.isRequired
+};
+
+export default NavBar;
